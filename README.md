@@ -35,14 +35,18 @@ Each query was run in PostgreSQL, with outputs validated and screenshots capture
 ---
 
 ## 5. Syntaxes and Results
+
+-- =========================================================
+-- Drop existing tables
+-- =========================================================
 DROP TABLE IF EXISTS sales;
 DROP TABLE IF EXISTS customers;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS city;
 
----
-
---Import tables
+-- =========================================================
+-- Create and Impport tables
+-- =========================================================
 
 -- Create Products table
 CREATE TABLE products (
@@ -356,27 +360,28 @@ ORDER BY revenue_q4_2024 DESC;
 ---
 
 ## 7. Key Insights & Recommendations
-| City | Total Revenue | Customers | Coffee Consumers (M) | Avg Orders/Customer | Avg Sales/Customer | Avg Rent/Customer | Rent Efficiency | Growth Momentum (Q3–Q4 2023) | YoY 2024 Trend |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Pune** | ₹1,258,290 | 52 | 1.88 | 41.06 | ₹24,197 | ₹294 | Excellent | +217.99% / +76.41% | Decline |
-| **Chennai** | ₹944,120 | 42 | 2.78 | 38.12 | ₹22,479 | ₹407 | Strong | +174.69% / +62.94% | Decline |
-| **Bangalore** | ₹860,110 | 39 | 3.08 | 37.54 | ₹22,054 | ₹761 | Moderate | +130.92% / +42.33% | Decline |
-| **Jaipur** | ₹803,450 | 69 | 1.00 | 19.96 | ₹11,644 | ₹156 | Good | +223.21% / +41.62% | Decline |
-| **Delhi** | ₹750,420 | 68 | 7.75 | 19.19 | ₹11,035 | ₹330 | Moderate | +228.65% / +51.51% | Decline |
-| **Mumbai** | ₹235,000 | 27 | 5.10 | 15.67 | ₹8,703 | ₹1,167 | Poor | +246.67% / +49.68% | Decline |
-| **Kanpur** | ₹213,550 | 35 | 0.78 | 10.63 | ₹6,101 | ₹231 | Moderate | +152.50% / +136.63% | Decline |
-| **Surat** | ₹176,540 | 27 | 1.80 | 11.00 | ₹6,538 | ₹500 | Weak | +51.67% / +89.56% | Decline |
-| **Kolkata** | ₹171,460 | 28 | 3.73 | 10.21 | ₹6,123 | ₹579 | Weak | +43.00% / +144.06% | Decline |
-| **Nagpur** | ₹140,050 | 24 | 0.73 | 10.54 | ₹5,835 | ₹300 | Moderate | +208.33% / +55.14% | Decline |
-| **Indore** | ₹138,590 | 21 | 0.83 | 11.00 | ₹6,600 | ₹300 | Moderate | +113.33% / +76.56% | Decline |
-| **Ahmedabad** | ₹137,690 | 23 | 2.08 | 9.78 | ₹5,987 | ₹626 | Weak | +91.86% / +32.73% | Decline |
-| **Hyderabad** | ₹131,520 | 21 | 2.50 | 10.52 | ₹6,263 | ₹1,071 | Poor | +112.86% / +27.52% | Decline |
-| **Lucknow** | ₹109,400 | 21 | 0.95 | 9.43 | ₹5,210 | ₹429 | Weak | +190.70% / +23.42% | Decline |
+| City | Combined Total Revenue | Customers | Coffee Consumers (M) | Avg Orders/Customer | Avg Sales/Customer | Avg Rent/Customer | YoY Growth (%) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Pune** | ₹1,258,290 | 52 | 1.88 | 41.06 | ₹24,197 | ₹294 | -52.48% |
+| **Chennai** | ₹944,120 | 42 | 2.78 | 38.12 | ₹22,479 | ₹407 | -54.37% |
+| **Bangalore** | ₹860,110 | 39 | 3.08 | 37.54 | ₹22,054 | ₹761 | -55.08% |
+| **Jaipur** | ₹803,450 | 69 | 1.00 | 19.96 | ₹11,644 | ₹156 | -42.55% |
+| **Delhi** | ₹750,420 | 68 | 7.75 | 19.19 | ₹11,035 | ₹330 | -34.19% |
+| **Mumbai** | ₹235,000 | 27 | 5.10 | 15.67 | ₹8,703 | ₹1,167 | -34.45% |
+| **Kanpur** | ₹213,550 | 35 | 0.78 | 10.63 | ₹6,101 | ₹231 | -19.68% |
+| **Surat** | ₹176,540 | 27 | 1.80 | 11.00 | ₹6,538 | ₹500 | -23.79% |
+| **Kolkata** | ₹171,460 | 28 | 3.73 | 10.21 | ₹6,123 | ₹579 | -23.27% |
+| **Nagpur** | ₹140,050 | 24 | 0.73 | 10.54 | ₹5,835 | ₹300 | -34.94% |
+| **Indore** | ₹138,590 | 21 | 0.83 | 11.00 | ₹6,600 | ₹300 | -46.45% |
+| **Ahmedabad** | ₹137,690 | 23 | 2.08 | 9.78 | ₹5,987 | ₹626 | -26.37% |
+| **Hyderabad** | ₹131,520 | 21 | 2.50 | 10.52 | ₹6,263 | ₹1,071 | -44.12% |
+| **Lucknow** | ₹109,400 | 21 | 0.95 | 9.43 | ₹5,210 | ₹429 | -34.97% |
 
 - **Pune:** Highest revenue (₹1.25M), strong loyalty (avg orders per customer = 41.06), excellent rent efficiency (₹24,197 sales vs. ₹294 rent per customer).  
 - **Chennai:** Second highest revenue (₹944,120). Large customer base (42), high avg orders (38.12), strong seasonal growth (+174% in Sept 2023).  
 - **Bangalore:** Third highest revenue (₹860,110), high avg orders (37.54), Average sales per customer (₹22,054) compared to rent per customer (₹761) still shows profitability, strong demand spikes (+130% in Sept 2023).  
-- **YoY Decline in 2024:** Online sales dropped across all cities, signaling maybe saturation. Physical stores can stabilize demand and capture untapped consumer potential.  
+- **YoY Decline in 2024:** Online sales dropped across all cities, signaling maybe saturation. Physical stores can stabilize demand and capture untapped consumer potential.
+- Top 20 customers are from the above cities, with the highest average sales per customer, highest total revenue
 
 **Recommendation:** Open first physical stores in **Pune, Chennai, and Bangalore** to balance profitability, loyalty, and growth momentum.
 
