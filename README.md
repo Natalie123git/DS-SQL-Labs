@@ -135,6 +135,8 @@ JOIN products
 GROUP BY products.product_name
 ORDER BY total_units_sold DESC;
 ```
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_3_Sales_Volume_by_Product.png)
+---
 
 ```sql
 -- Question 4: Average Sales per Customer by City
@@ -153,7 +155,8 @@ JOIN city
 GROUP BY city.city_name
 ORDER BY total_revenue DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_4_Average_Sales_per_Customer_by_City.png)
+---
 ```sql
 -- Question 5: Current Customers vs. Estimated Coffee Consumers
 -- This query uses CTEs to compare the estimated coffee‑drinking population with the actual number of unique customers from sales data.  
@@ -184,7 +187,8 @@ LEFT JOIN current_customers cc
     ON e.city_id = cc.city_id
 ORDER BY e.coffee_cust_mil DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_5_Current_Customers_vs_Estimated_Coffee_Consumers.png)
+---
 ```sql
 -- Question 6: Top 3 Products per City
 -- This query ranks coffee products within each city by number of orders using a window function and selects the top three products per city.  
@@ -214,7 +218,8 @@ FROM (
 WHERE product_rank <= 3
 ORDER BY city_name, total_orders DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_3_Sales_Volume_by_Product.png)
+---
 ```sql
 -- Question 7: Unique Customers per City.
 -- This query counts the distinct customers in each city who have made at least one coffee purchase and orders cities by customer count descending.  
@@ -230,7 +235,8 @@ JOIN city
 GROUP BY city.city_name
 ORDER BY current_customers DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_7_Unique_Customers_per_City.png)
+---
 ```sql
 -- Question 8: Average Sale vs. Average Rent per Customer for evaluation of cost efficiency.
 -- This query compares the average sale amount per customer against the average rent cost per customer to evaluate cost efficiency across cities.  
@@ -247,7 +253,8 @@ JOIN city
 GROUP BY city.city_name, city.estimated_rent
 ORDER BY avg_sale_per_cust DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_8_Average_Sale_vs_Average_Rent_per_Customer.png)
+---
 ```sql
 -- Question 9: Month-on-Month percentage change in Sales Growth
 -- This query calculates the month‑on‑month percentage change in total sales for each city by using the LAG() window function to compare each month’s sales with the previous month, excluding the first month where no prior data exists.  
@@ -277,7 +284,9 @@ FROM (
 WHERE prev_month_sales IS NOT NULL
 ORDER BY city_name, sale_month;
 ```
-
+https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.csv
+![https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.png)
+---
 ```sql
 -- Question 10: Market Potential Summary per city.
 -- This query produces a comprehensive market potential table per city, showing total revenue, estimated rent, total customers, estimated coffee consumers, and average sales and rent per customer, ordered by revenue descending.  
@@ -298,7 +307,8 @@ JOIN city
 GROUP BY city.city_name, city.estimated_rent, city.population
 ORDER BY total_revenue DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_10_Market_Potential_Summary_per_city.png)
+---
 ```sql
 -- Question 11: Top 20 customers with their city information
 -- Who are the top 20 customers, based on their total spending across all purchases and number of orders?
@@ -321,7 +331,8 @@ LIMIT 20;
 -- helping Monday Coffee recognize its most valuable clients and prioritize them for 
 -- loyalty programs, personalized offers, or premium services.
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_11_Top_20_customers.png)
+---
 ```sql
 -- Question 12: Cities with the highest average number of orders per customer
 -- Which cities have the highest average number of orders per customer?  
@@ -336,7 +347,8 @@ GROUP BY city.city_name
 ORDER BY avg_orders_per_customer DESC;
 -- This query shows where customers buy most frequently, highlighting cities with stronger engagement and potential for steady foot traffic in physical stores.
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_12_Cities_with_highest_average_orders_per_customer.png)
+---
 ```sql
 -- Question 13: Which cities generated the highest revenue growth rate over the past year?
 -- Year-over-year(yoy) revenue growth per city
@@ -354,7 +366,8 @@ GROUP BY city.city_name
 ORDER BY yoy_growth_pct DESC;
 -- This query highlights cities where sales are accelerating fastest, signaling strong momentum and future potential for physical store expansion.
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_13_Year-over-year_revenue_growth_per_city.png)
+---
 ```sql
 -- Question 14: Total Revenue per city for Q4 2023 vs 2024
 -- This query computes the total coffee sales revenue per city during the last quarter of 2023 and sorts cities by revenue descending.  
@@ -378,6 +391,7 @@ JOIN city ON customers.city_id = city.city_id
 GROUP BY city.city_name
 ORDER BY revenue_q4_2024 DESC;
 ```
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_14_Total_Revenue_per_City%20_Q4_2023_vs_Q4_2024.png)
 
 ---
 
