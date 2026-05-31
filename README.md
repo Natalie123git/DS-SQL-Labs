@@ -36,17 +36,17 @@ Each query was run in PostgreSQL, with outputs validated and screenshots capture
 
 ## 5. Syntaxes and Results
 
--- =========================================================
--- Drop existing tables
--- =========================================================
+### Drop existing tables
+
+```sql
 DROP TABLE IF EXISTS sales;
 DROP TABLE IF EXISTS customers;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS city;
 
--- =========================================================
+
 -- Create and Impport tables
--- =========================================================
+
 
 -- Create Products table
 CREATE TABLE products (
