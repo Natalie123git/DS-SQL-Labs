@@ -18,7 +18,9 @@ The data is divided into 4 tables which are in csv format.
 - **Sales Table:** Transaction records (sale_id, sale_date, product_id, customer_id, total and rating).  
 - **Customers Table:** Customer details (customer_id, customer_name, city_id).  
 - **City Table:** City demographics and costs (city_id, city_name, population, estimated_rent, city_rank).  
-- **Products Table:** Product catalog (product_id, product_name, price).  
+- **Products Table:** Product catalog (product_id, product_name, price).
+
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/ERD.png)
 
 ---
 
@@ -45,10 +47,9 @@ DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS city;
 ```
 
+### Create, Impport and View tables
 
--- Create and Impport tables
-
-
+```sql
 -- Create Products table
 CREATE TABLE products (
     product_id INT PRIMARY KEY,
@@ -87,7 +88,9 @@ SELECT * FROM products;
 SELECT * FROM customers;
 SELECT * FROM city;
 SELECT * FROM sales;
+```
 
+```sql
 -- Question 1: Coffee Consumer Estimate
 -- This query calculates the estimated number of coffee consumers by assuming 25% of each city’s population drinks coffee, converting the figure into millions, and ordering results from highest to lowest.  
 
@@ -96,7 +99,12 @@ SELECT
 	ROUND((population * 0.25)/1000000.0, 2) AS coffee_cust_mil
 FROM city
 ORDER BY coffee_cust_mil DESC;
+```
+### Screenshots of Results
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_1_Coffee_Consumer_Estimate.png)
+---
 
+```sql
 -- Question 2: Total Revenue per city for Q4 2023
 -- This query computes the total coffee sales revenue per city during the last quarter of 2023 and sorts cities by revenue descending.  
 
@@ -111,7 +119,9 @@ JOIN city
 WHERE sales.sale_date BETWEEN '2023-10-01' AND '2023-12-31'
 GROUP BY city.city_name
 ORDER BY total_revenue DESC;
+```
 
+```sql
 -- Question 3: Sales Volume by Product
 -- This query sums the total units sold for each coffee product and ranks products from best‑selling to least‑selling.  
 
@@ -123,7 +133,9 @@ JOIN products
 	ON sales.product_id = products.product_id
 GROUP BY products.product_name
 ORDER BY total_units_sold DESC;
+```
 
+```sql
 -- Question 4: Average Sales per Customer by City
 -- This query calculates average sales per customer by dividing total revenue by the number of unique customers in each city, while also showing total revenue and customer count.  
 
@@ -139,7 +151,9 @@ JOIN city
     ON customers.city_id = city.city_id
 GROUP BY city.city_name
 ORDER BY total_revenue DESC;
+```
 
+```sql
 -- Question 5: Current Customers vs. Estimated Coffee Consumers
 -- This query uses CTEs to compare the estimated coffee‑drinking population with the actual number of unique customers from sales data.  
 
@@ -168,7 +182,9 @@ FROM estimated_coffee_consumers e
 LEFT JOIN current_customers cc 
     ON e.city_id = cc.city_id
 ORDER BY e.coffee_cust_mil DESC;
+```
 
+```sql
 -- Question 6: Top 3 Products per City
 -- This query ranks coffee products within each city by number of orders using a window function and selects the top three products per city.  
 
@@ -196,8 +212,9 @@ FROM (
 	)
 WHERE product_rank <= 3
 ORDER BY city_name, total_orders DESC;
+```
 
-
+```sql
 -- Question 7: Unique Customers per City.
 -- This query counts the distinct customers in each city who have made at least one coffee purchase and orders cities by customer count descending.  
 
@@ -211,7 +228,9 @@ JOIN city
 	ON customers.city_id = city.city_id
 GROUP BY city.city_name
 ORDER BY current_customers DESC;
-	
+```
+
+```sql
 -- Question 8: Average Sale vs. Average Rent per Customer for evaluation of cost efficiency.
 -- This query compares the average sale amount per customer against the average rent cost per customer to evaluate cost efficiency across cities.  
 
@@ -226,7 +245,9 @@ JOIN city
     ON customers.city_id = city.city_id
 GROUP BY city.city_name, city.estimated_rent
 ORDER BY avg_sale_per_cust DESC;
+```
 
+```sql
 -- Question 9: Month-on-Month percentage change in Sales Growth
 -- This query calculates the month‑on‑month percentage change in total sales for each city by using the LAG() window function to compare each month’s sales with the previous month, excluding the first month where no prior data exists.  
 
@@ -254,7 +275,9 @@ FROM (
 )
 WHERE prev_month_sales IS NOT NULL
 ORDER BY city_name, sale_month;
+```
 
+```sql
 -- Question 10: Market Potential Summary per city.
 -- This query produces a comprehensive market potential table per city, showing total revenue, estimated rent, total customers, estimated coffee consumers, and average sales and rent per customer, ordered by revenue descending.  
 
@@ -273,7 +296,9 @@ JOIN city
     ON customers.city_id = city.city_id
 GROUP BY city.city_name, city.estimated_rent, city.population
 ORDER BY total_revenue DESC;
+```
 
+```sql
 -- Question 11: Top 20 customers with their city information
 -- Who are the top 20 customers, based on their total spending across all purchases and number of orders?
 
@@ -294,8 +319,9 @@ LIMIT 20;
 -- This query reveals the top 10 customers ranked by total spending, 
 -- helping Monday Coffee recognize its most valuable clients and prioritize them for 
 -- loyalty programs, personalized offers, or premium services.
+```
 
-
+```sql
 -- Question 12: Cities with the highest average number of orders per customer
 -- Which cities have the highest average number of orders per customer?  
 
@@ -308,8 +334,9 @@ JOIN city ON customers.city_id = city.city_id
 GROUP BY city.city_name
 ORDER BY avg_orders_per_customer DESC;
 -- This query shows where customers buy most frequently, highlighting cities with stronger engagement and potential for steady foot traffic in physical stores.
+```
 
-
+```sql
 -- Question 13: Which cities generated the highest revenue growth rate over the past year?
 -- Year-over-year(yoy) revenue growth per city
 SELECT 
@@ -325,7 +352,9 @@ JOIN city ON customers.city_id = city.city_id
 GROUP BY city.city_name
 ORDER BY yoy_growth_pct DESC;
 -- This query highlights cities where sales are accelerating fastest, signaling strong momentum and future potential for physical store expansion.
+```
 
+```sql
 -- Question 14: Total Revenue per city for Q4 2023 vs 2024
 -- This query computes the total coffee sales revenue per city during the last quarter of 2023 and sorts cities by revenue descending.  
 
@@ -347,6 +376,7 @@ JOIN customers ON sales.customer_id = customers.customer_id
 JOIN city ON customers.city_id = city.city_id
 GROUP BY city.city_name
 ORDER BY revenue_q4_2024 DESC;
+```
 
 ---
 
