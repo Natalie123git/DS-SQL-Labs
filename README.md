@@ -91,8 +91,9 @@ SELECT * FROM sales;
 ```
 
 ### Questions and Results
+
+#### Question 1: Coffee Consumer Estimate
 ```sql
--- Question 1: Coffee Consumer Estimate
 -- This query calculates the estimated number of coffee consumers by assuming 25% of each city’s population drinks coffee, converting the figure into millions, and ordering results from highest to lowest.  
 
 SELECT
@@ -104,8 +105,8 @@ ORDER BY coffee_cust_mil DESC;
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_1_Coffee_Consumer_Estimate.png)
 ---
 
+#### Question 2: Total Revenue per city for Q4 2023
 ```sql
--- Question 2: Total Revenue per city for Q4 2023
 -- This query computes the total coffee sales revenue per city during the last quarter of 2023 and sorts cities by revenue descending.  
 
 SELECT 
@@ -122,8 +123,9 @@ ORDER BY total_revenue DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_2_Total_Revenue_per_city_Q4_2023.png)
 ---
+
+#### Question 3: Sales Volume by Product
 ```sql
--- Question 3: Sales Volume by Product
 -- This query sums the total units sold for each coffee product and ranks products from best‑selling to least‑selling.  
 
 SELECT
@@ -138,8 +140,8 @@ ORDER BY total_units_sold DESC;
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_3_Sales_Volume_by_Product.png)
 ---
 
+#### Question 4: Average Sales per Customer by City
 ```sql
--- Question 4: Average Sales per Customer by City
 -- This query calculates average sales per customer by dividing total revenue by the number of unique customers in each city, while also showing total revenue and customer count.  
 
 SELECT 
@@ -157,8 +159,9 @@ ORDER BY total_revenue DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_4_Average_Sales_per_Customer_by_City.png)
 ---
+
+#### Question 5: Current Customers vs. Estimated Coffee Consumers
 ```sql
--- Question 5: Current Customers vs. Estimated Coffee Consumers
 -- This query uses CTEs to compare the estimated coffee‑drinking population with the actual number of unique customers from sales data.  
 
 WITH estimated_coffee_consumers AS (
@@ -189,8 +192,9 @@ ORDER BY e.coffee_cust_mil DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_5_Current_Customers_vs_Estimated_Coffee_Consumers.png)
 ---
+
+#### Question 6: Top 3 Products per City
 ```sql
--- Question 6: Top 3 Products per City
 -- This query ranks coffee products within each city by number of orders using a window function and selects the top three products per city.  
 
 SELECT 
@@ -221,8 +225,9 @@ ORDER BY city_name, total_orders DESC;
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_6_Top_3_Products_per_City_1.png)
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_6_Top_3_Products_per_City_2.png)
 ---
+
+#### Question 7: Unique Customers per City.
 ```sql
--- Question 7: Unique Customers per City.
 -- This query counts the distinct customers in each city who have made at least one coffee purchase and orders cities by customer count descending.  
 
 SELECT
@@ -238,8 +243,9 @@ ORDER BY current_customers DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_7_Unique_Customers_per_City.png)
 ---
+
+#### Question 8: Average Sale vs. Average Rent per Customer for evaluation of cost efficiency.
 ```sql
--- Question 8: Average Sale vs. Average Rent per Customer for evaluation of cost efficiency.
 -- This query compares the average sale amount per customer against the average rent cost per customer to evaluate cost efficiency across cities.  
 
 SELECT 
@@ -256,8 +262,9 @@ ORDER BY avg_sale_per_cust DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_8_Average_Sale_vs_Average_Rent_per_Customer.png)
 ---
+
+#### Question 9: Month-on-Month percentage change in Sales Growth
 ```sql
--- Question 9: Month-on-Month percentage change in Sales Growth
 -- This query calculates the month‑on‑month percentage change in total sales for each city by using the LAG() window function to compare each month’s sales with the previous month, excluding the first month where no prior data exists.  
 
 SELECT 
@@ -289,8 +296,9 @@ https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month
 
 ![https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.png)
 ---
+
+#### Question 10: Market Potential Summary per city.
 ```sql
--- Question 10: Market Potential Summary per city.
 -- This query produces a comprehensive market potential table per city, showing total revenue, estimated rent, total customers, estimated coffee consumers, and average sales and rent per customer, ordered by revenue descending.  
 
 SELECT 
@@ -311,8 +319,9 @@ ORDER BY total_revenue DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_10_Market_Potential_Summary_per_city.png)
 ---
+
+#### Question 11: Top 20 customers with their city information
 ```sql
--- Question 11: Top 20 customers with their city information
 -- Who are the top 20 customers, based on their total spending across all purchases and number of orders?
 
 SELECT 
@@ -335,8 +344,9 @@ LIMIT 20;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_11_Top_20_customers.png)
 ---
+
+#### Question 12: Cities with the highest average number of orders per customer
 ```sql
--- Question 12: Cities with the highest average number of orders per customer
 -- Which cities have the highest average number of orders per customer?  
 
 SELECT 
@@ -351,8 +361,9 @@ ORDER BY avg_orders_per_customer DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_12_Cities_with_highest_average_orders_per_customer.png)
 ---
+
+#### Question 13: Which cities generated the highest revenue growth rate over the past year?
 ```sql
--- Question 13: Which cities generated the highest revenue growth rate over the past year?
 -- Year-over-year(yoy) revenue growth per city
 SELECT 
     city.city_name,
@@ -370,8 +381,9 @@ ORDER BY yoy_growth_pct DESC;
 ```
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_13_Year-over-year_revenue_growth_per_city.png)
 ---
+
+#### Question 14: Total Revenue per city for Q4 2023 vs 2024
 ```sql
--- Question 14: Total Revenue per city for Q4 2023 vs 2024
 -- This query computes the total coffee sales revenue per city during the last quarter of 2023 and sorts cities by revenue descending.  
 
 -- Total Revenue per City for Q4 2023 vs Q4 2024
@@ -436,8 +448,8 @@ ORDER BY revenue_q4_2024 DESC;
 ---
 
 ## 8. Limitations & Future Work
-- **Data Limitations:** Dataset may not fully capture one‑time buyers (repeat rate anomaly).  
-- **Timeframe:** Analysis limited to 2023–2024; longer historical data would improve forecasting.  
+- **Data Limitations:** Dataset may not fully capture one‑time buyers (repeat rate anomaly). 
+- **Timeframe:** Analysis limited to 2023–2024. Data for 2024 seemed to be quite low and so analysis results were mainly based on data from 2023, longer historical data would improve forecasting.  
 - **External Factors:** Rent estimates are static; real estate market fluctuations not modeled.  
 - **Future Work:**  
   - Incorporate marketing campaign data to explain seasonal spikes.  
