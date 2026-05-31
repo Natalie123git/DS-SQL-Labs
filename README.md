@@ -438,10 +438,10 @@ ORDER BY revenue_q4_2024 DESC;
 | **Lucknow** | ₹109,400 | 21 | 0.95 | 9.43 | ₹5,210 | ₹429 | -34.97% |
 
 - **Pune:** Highest revenue (₹1.25M), strong loyalty (avg orders per customer = 41.06), excellent rent efficiency (₹24,197 sales vs. ₹294 rent per customer).  
-- **Chennai:** Second highest revenue (₹944,120). Large customer base (42), high avg orders (38.12), strong seasonal growth (+174% in Sept 2023).  
-- **Bangalore:** Third highest revenue (₹860,110), high avg orders (37.54), Average sales per customer (₹22,054) compared to rent per customer (₹761) still shows profitability, strong demand spikes (+130% in Sept 2023).  
+- **Chennai:** Second highest revenue (₹944,120). Large customer base (42), high avg orders (38.12), strong seasonal growth in Sept 2023.  
+- **Bangalore:** Third highest revenue (₹860,110), high avg orders (37.54), Average sales per customer (₹22,054) compared to rent per customer (₹761) still shows profitability, strong demand spikes in Sept 2023.  
 - **YoY Decline in 2024:** Online sales dropped across all cities, signaling maybe saturation. Physical stores can stabilize demand and capture untapped consumer potential.
-- Top 20 customers are from the above cities, with the highest average sales per customer, highest total revenue
+- Top 20 customers are from the above cities, with the highest average sales per customer and highest total revenue
 
 **Recommendation:** Open first physical stores in **Pune, Chennai, and Bangalore** to balance profitability, loyalty, and growth momentum.
 
