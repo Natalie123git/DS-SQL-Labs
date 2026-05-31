@@ -12,7 +12,7 @@ The key business problem is:
 > *Cities that Monday Coffee should prioritize for its first physical store expansion, based on demand, customer behavior, profitability, and growth potential*
 
 ---
-## 4. Project Objectives
+## 3. Project Objectives
 - Estimate Market Potential
 - Measure City‑Level Performance
 - Assess Cost Efficiency
