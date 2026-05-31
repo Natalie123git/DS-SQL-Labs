@@ -294,7 +294,7 @@ ORDER BY city_name, sale_month;
 ```
 https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.csv
 
-![https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.png)
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.png)
 ---
 
 #### Question 10: Market Potential Summary per city.
