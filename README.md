@@ -12,8 +12,16 @@ The key business problem is:
 > *Cities that Monday Coffee should prioritize for its first physical store expansion, based on demand, customer behavior, profitability, and growth potential*
 
 ---
+## 4. Project Objectives
+- Estimate Market Potential
+- Measure City‑Level Performance
+- Assess Cost Efficiency
+- Identify Growth Trends
+- Build Comparative Scorecards
+- Recommend Expansion Strategy 
+---
 
-## 3. Data Description
+## 4. Data Description
 The data is divided into 4 tables which are in csv format.
 - **Sales Table:** Transaction records (sale_id, sale_date, product_id, customer_id, total and rating).  
 - **Customers Table:** Customer details (customer_id, customer_name, city_id).  
@@ -24,7 +32,7 @@ The data is divided into 4 tables which are in csv format.
 
 ---
 
-## 4. Methodology
+## 5. Methodology
 Executed **14 SQL questions** to explore the dataset:
 - **Demand Analysis:** Coffee consumer estimates, total revenue per city, product sales volumes.  
 - **Customer Behavior:** Average sales per customer, unique customers per city, average orders per customer.  
@@ -36,7 +44,7 @@ Each query was run in PostgreSQL, with outputs validated and screenshots capture
 
 ---
 
-## 5. Syntaxes and Results
+## 6. Syntaxes and Results
 
 ### Drop existing tables
 
@@ -90,7 +98,7 @@ SELECT * FROM city;
 SELECT * FROM sales;
 ```
 
-### Questions and Results
+### Questions
 
 #### Question 1: Coffee Consumer Estimate
 ```sql
@@ -409,7 +417,7 @@ ORDER BY revenue_q4_2024 DESC;
 
 ---
 
-## 6. SQL Concepts Used
+## 7. SQL Concepts Used
 - **Aggregations:** `SUM()`, `COUNT()`, `AVG()`  
 - **Grouping:** `GROUP BY` with multiple columns  
 - **Conditional Logic:** `CASE WHEN` for filtering by quarter/year  
@@ -419,7 +427,7 @@ ORDER BY revenue_q4_2024 DESC;
 
 ---
 
-## 7. Key Insights & Recommendations
+## 8. Key Insights & Recommendations
 | City | Combined Total Revenue | Customers | Coffee Consumers (M) | Avg Orders/Customer | Avg Sales/Customer | Avg Rent/Customer | YoY Growth (%) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Pune** | ₹1,258,290 | 52 | 1.88 | 41.06 | ₹24,197 | ₹294 | -52.48% |
@@ -447,7 +455,7 @@ ORDER BY revenue_q4_2024 DESC;
 
 ---
 
-## 8. Limitations & Future Work
+## 9. Limitations & Future Work
 - **Data Limitations:** Dataset may not fully capture one‑time buyers (repeat rate anomaly). 
 - **Timeframe:** Analysis limited to 2023–2024. Data for 2024 seemed to be quite low and so analysis results were mainly based on data from 2023, longer historical data would improve forecasting.  
 - **External Factors:** Rent estimates are static; real estate market fluctuations not modeled.  
