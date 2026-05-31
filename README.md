@@ -47,7 +47,7 @@ DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS city;
 ```
 
-### Create, Impport and View tables
+### Create, Import and View tables
 
 ```sql
 -- Create Products table
@@ -90,6 +90,7 @@ SELECT * FROM city;
 SELECT * FROM sales;
 ```
 
+### Questions and Results
 ```sql
 -- Question 1: Coffee Consumer Estimate
 -- This query calculates the estimated number of coffee consumers by assuming 25% of each city’s population drinks coffee, converting the figure into millions, and ordering results from highest to lowest.  
@@ -100,7 +101,6 @@ SELECT
 FROM city
 ORDER BY coffee_cust_mil DESC;
 ```
-### Screenshots of Results
 ![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_1_Coffee_Consumer_Estimate.png)
 ---
 
@@ -120,7 +120,8 @@ WHERE sales.sale_date BETWEEN '2023-10-01' AND '2023-12-31'
 GROUP BY city.city_name
 ORDER BY total_revenue DESC;
 ```
-
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_2_Total_Revenue_per_city_Q4_2023.png)
+---
 ```sql
 -- Question 3: Sales Volume by Product
 -- This query sums the total units sold for each coffee product and ranks products from best‑selling to least‑selling.  
