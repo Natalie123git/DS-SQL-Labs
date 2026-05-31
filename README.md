@@ -218,7 +218,8 @@ FROM (
 WHERE product_rank <= 3
 ORDER BY city_name, total_orders DESC;
 ```
-![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_3_Sales_Volume_by_Product.png)
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_6_Top_3_Products_per_City_1.png)
+![Result1](https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_6_Top_3_Products_per_City_2.png)
 ---
 ```sql
 -- Question 7: Unique Customers per City.
@@ -285,6 +286,7 @@ WHERE prev_month_sales IS NOT NULL
 ORDER BY city_name, sale_month;
 ```
 https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.csv
+
 ![https://github.com/Natalie123git/DS-SQL-Labs/blob/main/Question_9_Month-on-Month_percentage_change.png)
 ---
 ```sql
